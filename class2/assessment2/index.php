@@ -6,11 +6,10 @@
     
   </head>
   <body>
-
     <?php
     echo '<h1>PHP and Creating Output</h1>'
     ?>
-
+  
     <?php
     echo '<p>The PHP echo command can be used to create output.</p>'
     ?>
@@ -18,7 +17,7 @@
     <?php
     echo '<p>When creating output using echo and PHP, quotes can often cause problems. There are several solutions to using quotes within an echo statement:</p>'
     ?>
-
+    
     <?php
     echo '<ul>
         <li>Use HTML special characters</li>
@@ -34,14 +33,16 @@
     <?php
     echo '<p>PHP says "Hello World!"</p>'
     ?>
-    
+
     <?php
-    ec-vsd-vsdvho '<p>Can you display a sentence with '  and "?</p>'
+    echo '<p>Can you display a sentence with \' and "?</p>'
     ?>
 
     <?php
     echo '<img src="php-logo.png">'
     ?>
+    <!-- Below is the better option for displaying an image -->
+    <img src = '<?php echo "php-logo.png"; ?>'>
 
   </body>
 </html>
