@@ -39,7 +39,7 @@
   </ul>
 </header>
   <?php
-    $connect = mysqli_connect('localhost', 'root', 'root', 'HTTP5225');
+    $connect = mysqli_connect('sql311.infinityfree.com', 'if0_35758274', 'x96gqbkkqqrl', 'if0_35758274_http5225');
     $query = 'SELECT riders_table.fname, riders_table.lname, riders_table.team, riders_table.nationality, manufacturer_table.manufacturer_name, imageURL
     FROM riders_table 
     JOIN manufacturer_table  ON riders_table.manufacturer_id = manufacturer_table.id';
