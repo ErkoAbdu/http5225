@@ -36,11 +36,14 @@
     <li class="nav-item">
       <a class="nav-link" href="jap.php">Japanese Riders</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="newRider.php">Add New Rider</a>
+    </li>
   </ul>
 </header>
   <?php
     $connect = mysqli_connect('sql311.infinityfree.com', 'if0_35758274', 'x96gqbkkqqrl', 'if0_35758274_http5225');
-    $query = 'SELECT riders_table.fname, riders_table.lname, riders_table.team, riders_table.nationality, manufacturer_table.manufacturer_name, imageURL
+    $query = 'SELECT riders_table.id, riders_table.fname, riders_table.lname, riders_table.team, riders_table.nationality, manufacturer_table.manufacturer_name, imageURL
     FROM riders_table 
     JOIN manufacturer_table  ON riders_table.manufacturer_id = manufacturer_table.id
     WHERE riders_table.nationality = "Spain"';
@@ -67,6 +70,12 @@
                   <li class="list-group-item"><strong>Nationality</strong>: '. $rider['nationality'] .'</li>
                   <li class="list-group-item"><strong>Manufacturer</strong>: '. $rider['manufacturer_name'] .'</li>
                 </ul>
+                <div class ="card-footer">
+                    <form method="GET" action="includes/deleteRider.php">
+                        <input type="hidden" name="id" value="' . $rider['id'] . '">
+                        <button type="submit" name="delete" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </div>
               </div>
             </div>';
         }
